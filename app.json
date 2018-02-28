@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "debug":true,
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#72C9E9",
+    "navigationBarTitleText": "畅游助手",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#eeeeee",
+    "enablePullDownRefresh":true
+  },
+  "tabBar":{
+    "backgroundColor":"#72C9E9",
+    "borderStyle":"white",
+    "color":"white",
+    "selectedColor": "#dbdbdb",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"public/imgs/home_default.png",
+        "selectedIconPath":"public/imgs/home_selected.png"
+      },{
+        "pagePath": "pages/logs/logs",
+        "text": "相机",
+        "iconPath": "public/imgs/camera_default.png",
+        "selectedIconPath": "public/imgs/camera_selected.png"
+      },
+      {
+        "pagePath":"pages/logs/logs",
+        "text":"更多",
+        "iconPath": "public/imgs/more_default.png",
+        "selectedIconPath": "public/imgs/more_selected.png"
+      }
+    ]
+  },
+  "networkTimeout":{
+    "request":10000,
+    "downloadFile":10000
+  }
+}
