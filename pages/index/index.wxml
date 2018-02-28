@@ -10,6 +10,6 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view class='firstv'>{{!!msg?msg:"默认值"}}</view>
-  <button bindtap='clickMe'>点击我</button>
+  <!-- <view class='firstv'>{{!!msg?msg:"默认值"}}</view>
+  <button bindtap='clickMe'>点击我</button> -->
 </view>
