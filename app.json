@@ -5,35 +5,42 @@
   ],
   "debug":true,
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#72C9E9",
-    "navigationBarTitleText": "畅游助手",
-    "navigationBarTextStyle":"white",
-    "backgroundColor":"#eeeeee",
-    "enablePullDownRefresh":true
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "跑腿",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#F5F7FA",
+    "enablePullDownRefresh":false,
+    "navigationStyle":"custom"
   },
   "tabBar":{
-    "backgroundColor":"#72C9E9",
-    "borderStyle":"white",
-    "color":"white",
-    "selectedColor": "#dbdbdb",
+    "backgroundColor":"#FFF",
+    "borderStyle":"black",
+    "color":"#9B9B9B",
+    "selectedColor": "#43B3FB",
     "list":[
       {
         "pagePath":"pages/index/index",
-        "text":"首页",
-        "iconPath":"public/imgs/home_default.png",
-        "selectedIconPath":"public/imgs/home_selected.png"
+        "text":"医疗健康",
+        "iconPath":"public/imgs/tabBar/tabbar_health@2x.png",
+        "selectedIconPath":"public/imgs/tabBar/tabbar_health_sel@2x.png"
       },{
         "pagePath": "pages/logs/logs",
-        "text": "相机",
-        "iconPath": "public/imgs/camera_default.png",
-        "selectedIconPath": "public/imgs/camera_selected.png"
+        "text": "城市服务",
+        "iconPath": "public/imgs/tabBar/tabbar_insurance@2x.png",
+        "selectedIconPath": "public/imgs/tabBar/tabbar_insurance_sel@2x.png"
       },
       {
         "pagePath":"pages/logs/logs",
-        "text":"更多",
-        "iconPath": "public/imgs/more_default.png",
-        "selectedIconPath": "public/imgs/more_selected.png"
+        "text":"保障商城",
+        "iconPath": "public/imgs/tabBar/tabbar_baozhang@2x.png",
+        "selectedIconPath": "public/imgs/tabBar/tabbar_baozhang_sel@2x.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "public/imgs/tabBar/tabbar_mine@2x.png",
+        "selectedIconPath": "public/imgs/tabBar/tabbar_mine_sel@2x.png"
       }
     ]
   },
