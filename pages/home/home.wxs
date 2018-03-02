@@ -1,0 +1,5 @@
+function good(){
+  return 10
+}
+
+module.exports.good = good

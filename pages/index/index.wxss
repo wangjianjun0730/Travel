@@ -25,3 +25,33 @@
 .usermotto {
   /* margin-top: 200px; */
 }
+/* .test-div{
+  position: relative;
+  width: 150rpx;
+  height: 36rpx;
+  border: black 1rpx solid;
+  border-radius: 5rpx;
+  background: rgba(245, 245, 245, 1); 
+}
+
+.test-div::before,.test-div::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8rpx;
+  border: 116rpx transparent solid;
+  width: 0;
+  height: 0
+}
+
+.test-div::before{
+  left: -11rpx;
+  border-right-color: rgba(0, 245, 245, 1);
+  z-index: 1
+}
+
+.test-div::after{
+  left: -12rpx;
+  border-right-color: rgba(0, 0, 0, 1);
+  z-index: 2
+} */
