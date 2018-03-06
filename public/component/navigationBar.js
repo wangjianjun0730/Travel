@@ -1,10 +1,10 @@
-// public/component/testComponent.js
+// public/component/navigationBar.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    
   },
 
   /**

@@ -1,50 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/home/home"
+    "pages/logs/logs"
   ],
-  "debug": true,
   "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "跑跑接单",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#F5F7FA",
-    "enablePullDownRefresh": false,
     "navigationStyle": "custom"
-  },
-  "tabBar": {
-    "backgroundColor": "#FFF",
-    "borderStyle": "black",
-    "color": "#9B9B9B",
-    "selectedColor": "#43B3FB",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "医疗健康",
-        "iconPath": "public/imgs/tabBar/tabbar_health@2x.png",
-        "selectedIconPath": "public/imgs/tabBar/tabbar_health_sel@2x.png"
-      },
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "public/imgs/tabBar/tabbar_insurance@2x.png",
-        "selectedIconPath": "public/imgs/tabBar/tabbar_insurance_sel@2x.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "保障商城",
-        "iconPath": "public/imgs/tabBar/tabbar_baozhang@2x.png",
-        "selectedIconPath": "public/imgs/tabBar/tabbar_baozhang_sel@2x.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "我的",
-        "iconPath": "public/imgs/tabBar/tabbar_mine@2x.png",
-        "selectedIconPath": "public/imgs/tabBar/tabbar_mine_sel@2x.png"
-      }
-    ]
   },
   "networkTimeout": {
     "request": 10000,
