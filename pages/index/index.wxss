@@ -1,9 +1,8 @@
 /**index.wxss**/
 .navigationBar{
   width: 100%;
-  height: 64rpx;
+  height: 128rpx;
   background-color: red;
-  top: 50rpx
 }
 
 .container{
