@@ -10,19 +10,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
   },
- 
-  clickMe:function(){
-    this.setData({ msg: "这是第一个 view" }),
-    wx.showToast({
-      title: '点击了第一安按钮',
-    })
-  },
-  secBtnClick:function(){
-    commonFunc.sayHello();
-    this.setData({
-      array:["A",'B','C','D']
-    })
-  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
