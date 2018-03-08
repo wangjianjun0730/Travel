@@ -1,0 +1,8 @@
+.unique{
+  width: 180rpx;
+  height: 80rpx;
+  background-color: bluevioler;
+  font-size: 17rpx;
+  display: flex;
+  align-items: center;
+}

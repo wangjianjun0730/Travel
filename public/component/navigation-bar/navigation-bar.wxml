@@ -1,0 +1,3 @@
+<view class='navigationbar-container'>
+  <arrow-button-down>www</arrow-button-down>
+</view>

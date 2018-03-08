@@ -1,8 +1,8 @@
 <!--index.wxml-->
-<view class='navigationBar'>
+<!-- <view class='navigationBar'>
   导航栏
-</view>
-
+</view> -->
+<navigation-bar></navigation-bar>
 
 <view class="container">
   <view class="userinfo">
