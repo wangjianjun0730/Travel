@@ -31,29 +31,15 @@ App({
           })
         }
       }
-    })
-  },
-  //小程序从后台进入前台显示，会触发onshow
-  onShow:function(){
-    // wx.showToast({
-    //   title: '进入前台',
-    // })
-  
-    // wx.showActionSheet({
-    //   itemList: [],
-    // })
-    var confirmfuc = function (){
-        wx.showToast({
-          title: '点击了好的后的回调',
-        })
-    }
-  
-    wx.showModal({
-      title: '进入前台',
-      content: '这是一个测试用的弹框',
-      confirmColor:"#72C9E9",
-      confirmText:'好的',
-      complete: confirmfuc
+    }),
+    wx.getSystemInfo({
+      success: function (res) {
+        if (res.model == 'iphonex') {
+          this.setData({
+            isIphoneX: true
+          })
+        }
+      },
     })
   },
   globalData: {

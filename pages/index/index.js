@@ -11,12 +11,24 @@ Page({
     id:"1",
   },
 
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  onTap : function(e){
+    wx.showToast({
+      title: '132',
     })
   },
+
+  titleClick: function () {
+    wx.showToast({
+      title: '导航栏',
+    })
+  },
+
+  //事件处理函数
+  // bindViewTap: function() {
+  //   wx.navigateTo({
+  //     url: '../logs/logs'
+  //   })
+  // },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

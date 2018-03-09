@@ -1,8 +1,5 @@
 <!--index.wxml-->
-<!-- <view class='navigationBar'>
-  导航栏
-</view> -->
-<navigation-bar></navigation-bar>
+<navigation-bar  bind:titleClick='titleClick'></navigation-bar>
 
 <view class="container">
   <view class="userinfo">

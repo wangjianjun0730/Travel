@@ -8,19 +8,19 @@ Component({
   '../arrow-button-down/arrow-button-down':{
     type:'child',
     linked: function (target){
-      wx.showToast({
-        title: '插入了按钮子组件',
-      })
+      // wx.showToast({
+      //   title: '插入了按钮子组件',
+      // })
     },
     linkChanged: function (target){
-      wx.showToast({
-        title: '按钮组件插入了',
-      })
+      // wx.showToast({
+      //   title: '按钮组件插入了',
+      // })
     },
     unlinked: function (target){
-      wx.showToast({
-        title: '按钮组件被移除',
-      })
+      // wx.showToast({
+      //   title: '按钮组件被移除',
+      // })
     }
   }
 },
@@ -43,9 +43,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _propertyChanged:function(newValue,oldValue){
-      
-    }
+
+    
   },
 
   /**

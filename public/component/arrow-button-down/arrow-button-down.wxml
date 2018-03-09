@@ -1,1 +1,6 @@
-<button class='unique'>我是按钮</button>
+<view class='arrow-button-unique'>
+  <view>我是按钮</view>
+  <image class='arrow-button-arrow-imag' src='./img/arrow-down.png'></image>
+</view>
+
+

@@ -42,6 +42,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    buttonTap:function(){
+      wx.showToast({
+        title: '点击按钮，按钮内部触发',
+      })
+    }
   }
 })
