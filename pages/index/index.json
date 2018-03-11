@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "navigation-bar": "../../public/component/navigation-bar/navigation-bar"
+    "navigation-bar": "../../public/component/navigation-bar/navigation-bar",
+    "arrow-button-down": "../../public/component/arrow-button-down/arrow-button-down"
   }
 }

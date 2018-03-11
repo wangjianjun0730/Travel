@@ -1,21 +1,26 @@
+.button-container{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ 
  .arrow-button-unique{
-  width: 30%;
+  width: 40%;
   height: 60rpx;
   font-size: 0.7rem;
-  background-color: clear;
   border-radius: 13rpx;
   margin-left:auto;
-  padding-top: 20rpx;
   margin-right: auto;
-
+  
   /* 居中 */
   display: flex;
   align-items: center;
   justify-content: center;
-
 } 
 .arrow-button-arrow-imag{
   width: 30rpx;
   height: 17rpx;
   margin-left: 10rpx;
 }
+

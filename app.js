@@ -5,10 +5,19 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var self = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res.model)
+        if (res.model == 'iPhone X') {
+          self.globalData.isIpx = true
+        }
+      },
+    })
     // 登录
     wx.login({
       success: res => {
+        console.log(res);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -31,18 +40,11 @@ App({
           })
         }
       }
-    }),
-    wx.getSystemInfo({
-      success: function (res) {
-        if (res.model == 'iphonex') {
-          this.setData({
-            isIphoneX: true
-          })
-        }
-      },
     })
+    
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isIpx: false
   }
 })

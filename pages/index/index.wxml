@@ -1,5 +1,11 @@
 <!--index.wxml-->
-<navigation-bar  bind:titleClick='titleClick'></navigation-bar>
+<navigation-bar left-item-hidden="{{false}}">
+  <arrow-button-down 
+      class='title-button' 
+      color='white' 
+      fontSize='{34}'
+  ></arrow-button-down>
+</navigation-bar>
 
 <view class="container">
   <view class="userinfo">

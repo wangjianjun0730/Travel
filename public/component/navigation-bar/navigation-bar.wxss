@@ -3,8 +3,34 @@
   height: 124rpx;
   background-color: gold;
   justify-content:center;
+  position: relative;
 }
 
-.custom-arrow-button{
-  
+/* 适配iPhonex */
+.navigationbar-container-iphonex{
+  width: 100%;
+  height: 176rpx;
+  background-color: red;
+  justify-content:center;
+  position: relative;
+}
+
+.navigation-item-container{
+  width: 100%;
+  height:88rpx;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+/*导航栏返回按钮*/
+.left-back-icon{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 20rpx;
+
+  /*垂直居中*/
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
 }

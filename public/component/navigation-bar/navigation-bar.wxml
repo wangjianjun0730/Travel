@@ -1,3 +1,12 @@
-<view class='navigationbar-container'>
-  <arrow-button-down class='custom-arrow-button'></arrow-button-down>
+<view class="{{isIpx?'navigationbar-container-iphonex':'navigationbar-container'}}">
+<view class='navigation-item-container'>
+  <slot></slot>
+  <image 
+      class='left-back-icon' 
+      src='./img/left-back.png' 
+      wx:if="{{!leftItemHidden}}"
+      bindtap="leftBack">
+    </image>
+</view>
+    
 </view>

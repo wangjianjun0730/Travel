@@ -1,6 +1,5 @@
 {
   "component": true,
   "usingComponents": {
-    "arrow-button-down":"../arrow-button-down/arrow-button-down"
   }
 }
