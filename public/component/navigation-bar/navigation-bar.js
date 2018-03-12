@@ -73,10 +73,14 @@ Component({
   ready:function(){
     //获取定位坐标
     wx.getLocation({
+      type:"wgs84",
       success: function(res) {
         
 
       },
+      fail:function(error){
+
+      }
     })    
 
     this.setData({
