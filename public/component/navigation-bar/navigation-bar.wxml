@@ -1,12 +1,26 @@
 <view class="{{isIpx?'navigationbar-container-iphonex':'navigationbar-container'}}">
 <view class='navigation-item-container'>
-  <slot></slot>
-  <image 
+  <view class='left-items-container'>
+  <slot name="custom-left-item"></slot>
+    <image 
       class='left-back-icon' 
-      src='./img/left-back.png' 
+      src="{{titleColor=='white'?'./img/left-white.png':'./img/left-gray.png'}}" 
       wx:if="{{!leftItemHidden}}"
       bindtap="leftBack">
     </image>
+  </view>
+
+  <text 
+      wx:if="{{titleText.length!=0 && barType=='default'}}" 
+      class='bar-title-text' 
+      style="color:{{titleColor}}">{{titleText}}
+  </text> 
+  <arrow-button-down 
+      wx:if="{{titleText.length<=0 && barStyle=='arrow-button-down'}}"
+      class='title-button' 
+      title-color="{{titleColor}}" 
+      font-size="{{fontSize}}"
+  ></arrow-button-down>
 </view>
     
 </view>

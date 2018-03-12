@@ -1,11 +1,11 @@
 <!--index.wxml-->
-<navigation-bar left-item-hidden="{{false}}">
-  <arrow-button-down 
-      class='title-button' 
-      color='white' 
-      fontSize='{34}'
-  ></arrow-button-down>
-</navigation-bar>
+<navigation-bar 
+  left-item-hidden="{{true}}" 
+  title-text='' 
+  title-color='white'
+  bar-style='arrow-button-down'
+
+></navigation-bar>
 
 <view class="container">
   <view class="userinfo">

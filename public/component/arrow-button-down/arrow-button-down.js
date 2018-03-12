@@ -8,6 +8,7 @@ Component({
     '../navigation-bar/navigation-bar':{
       type:'parent',
       linked: function (target) { //插入到/navigation-bar中时被执行
+        console.log(target)
       },
       linkChanged:function(target){  
       },
@@ -24,11 +25,16 @@ Component({
   properties: {
     titleColor:{
       type:String,
-      value:'white'
+      value:'green'
     },
     fontSize:{
       type:Number,
-      value:15
+      value:100
+    },
+    titleContent:{
+      type:String,
+      value:'下拉选择按钮',
+      observer:'_changeTitleContent'
     }
   },
 
@@ -43,7 +49,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    _changeTitleContent:function(newValue,oldValue){
+      debugger
+      this.setData({
+        titleContent:newValue
+      })
+    },
     buttonTap:function(){
       wx.showToast({
         title: '点击按钮，按钮内部触发',

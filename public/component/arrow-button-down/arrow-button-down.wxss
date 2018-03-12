@@ -20,7 +20,7 @@
 } 
 .arrow-button-arrow-imag{
   width: 30rpx;
-  height: 17rpx;
+  height: 30rpx;
   margin-left: 10rpx;
 }
 

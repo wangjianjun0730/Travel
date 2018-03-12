@@ -1,9 +1,9 @@
 
 <view class='button-container'>
   <view class='arrow-button-unique'>
-    <view style='color:{{titleColor}} font:{{font-size}}'
-    >下拉选择按钮</view>
-    <image class='arrow-button-arrow-imag' src='./img/arrow-down.png'></image>
+    <view style='color:{{titleColor}};font-size:{{fontSize}}rpx'
+    >{{titleContent}}</view>
+    <image class='arrow-button-arrow-imag' src="{{titleColor=='white'?'./img/arrow-down-white.png':'./img/arrow-down.png'}}"></image>
   </view> 
 </view>
 

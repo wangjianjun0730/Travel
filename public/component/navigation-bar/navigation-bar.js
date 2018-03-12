@@ -10,6 +10,7 @@ Component({
   '../arrow-button-down/arrow-button-down':{
     type:'child',
     linked: function (target){
+     
     },
     linkChanged: function (target){
     },
@@ -22,16 +23,23 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    titleName:{
-      type:String,
-      value:'',
-      observer:null
-    },
     leftItemHidden:{
       type:Boolean,
       value:false,
-      obersver:"_leftItemHiddenChanged"
-    }
+    },
+    titleColor:{
+      type:String,
+      value:'black'
+    },
+    titleText:{
+      type:String,
+      value:'',
+    },
+    /*导航栏样式:default(默认标题样式),arrow-button-down:下拉框样式),tink*/
+    barStyle: {
+      type: String,
+      value: 'default'
+    },
   },
 
   /**
@@ -40,19 +48,13 @@ Component({
   data: {
     isIpx: app.globalData.isIpx, //适配iPhonex
     leftItemHidden:false,
-    customItem:null  //自定义控件
+    buttonTitle:'下拉按钮'  //自定义控件
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    //显示或隐藏左边导航栏返回按钮（默认显示）
-    _leftItemHiddenChanged:function(newValue,oldValue){
-      this.setData({
-        leftItemHidden: newValue
-      })
-    },
     leftBack:function(){
       wx.showToast({
         title: '返回',
@@ -66,6 +68,22 @@ Component({
   //不能使用setData
   created: function(){
 
+  },
+
+  ready:function(){
+    //获取定位坐标
+    wx.getLocation({
+      success: function(res) {
+        
+
+      },
+    })    
+
+    this.setData({
+
+    })
   }
+
+
 
 })

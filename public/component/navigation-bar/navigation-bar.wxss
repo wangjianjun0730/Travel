@@ -4,6 +4,7 @@
   background-color: gold;
   justify-content:center;
   position: relative;
+  text-align: center;
 }
 
 /* 适配iPhonex */
@@ -23,14 +24,38 @@
   bottom: 0;
 }
 
+.left-items-container{
+  width: 30%;
+  height: 100%;
+  /* background-color: goldenrod; */
+  display:flex;
+  justify-content:center;
+}
+
 /*导航栏返回按钮*/
 .left-back-icon{
   width: 35rpx;
   height: 35rpx;
   margin-left: 20rpx;
-
+  
   /*垂直居中*/
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
+  margin:auto auto auto 20rpx;
+}
+
+/*导航栏中间title*/
+.bar-title-text{
+  font-size: 34rpx;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  line-height: 88rpx;
+  
+  /* 居中 */
+  position:absolute;
+  margin: auto;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  
 }
