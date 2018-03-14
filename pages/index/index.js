@@ -31,6 +31,12 @@ Page({
   //   })
   // },
   onLoad: function () {
+
+    //获取当前定位信息
+    
+
+
+    //获取用户信息
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -57,6 +63,11 @@ Page({
         }
       })
     }
+
+    
+
+
+
   },
   getUserInfo: function(e) {
     console.log(e)

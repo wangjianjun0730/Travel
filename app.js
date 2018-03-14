@@ -5,6 +5,8 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    //获取机型（iPhone X）进行导航栏适配
     var self = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -39,12 +41,43 @@ App({
             }
           })
         }
+
+        if (res.authSetting['scope.userLocation']){
+          /**
+           * 获取当前定位信息
+           */
+          wx.getLocation({
+            type: 'gcj02',
+            success: function (res) {
+              console.log(res)
+              debugger
+              if (!this.data.currentLocation) {
+                this.setData({
+                  currentLocation: {
+                    log: res.longitude,
+                    lat: res.latitude
+                  }
+                })
+              }
+            }
+          })
+        }else{
+          //用户没有授权，必须让其授权才能使用（再次调起定位授权）
+
+        }
       }
     })
-    
   },
+  /**
+   * userInfo:用户缓存信息
+   * isIpx:是否为iPhoneX（导航栏适配）
+   * currentLocation:当前定位经纬度坐标
+   * currentSelectedCity:当前选择的城市（首次为定位城市,手动选择后为手动选择的城市
+  */
   globalData: {
     userInfo: null,
-    isIpx: false
+    isIpx: false,           
+    currentLocation:null,
+    currentSelectedCityName:null
   }
 })
