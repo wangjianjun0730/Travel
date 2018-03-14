@@ -3,6 +3,9 @@ var defaultLocation = require('./utils/homeLocationMock/homeLocationModk.js')
 
 App({
   onLaunch: function () {
+
+    console.log(defaultLocation.defaultLocation)
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -49,7 +52,6 @@ App({
         // debugger
         //获取当前定位信息
         if (res.authSetting['scope.userLocation']){
-          // debugger
           var self = this;
           wx.getLocation({
             type: 'gcj02',
@@ -63,35 +65,41 @@ App({
                   key: 'PQ3BZ-BXNLV-BTPPB-U4BCS-GZM5E-PEBUT'
                 },
                 success: res => {//逆编码请求成功
-                  console.log(res.data)
-                  if (self.currentLocationCallBack && res.status == 0){
-                    self.currentLocationCallBack(res);
+                  if (res.data.status == 0){
+                    self.globalData.defaultLocationInfo = res.data;
+                    if (self.currentLocationCallBack){
+                      self.currentLocationCallBack(res.data);
+                    }
+                    
                   }else{
                     wx.showLoading({
-                      title: res.message
+                      title: res.data.message
                     })
-                    self.currentLocationCallBack(self.globalData.defaultLocationInfo);
+                    self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
+                    if (self.currentLocationCallBack) {
+                      self.currentLocationCallBack(self.globalData.defaultLocationInfo);
+                    }
                   } 
                 },
                 fail: error => {//逆编码请求失败
-                  debugger
+                  self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
+                  wx.showLoading({
+                    title: error.errMsg,
+                    icon: "none"
+                  })
                   if (self.currentLocationCallBack) {
-                    wx.showLoading({
-                      title: error.errMsg,
-                      icon: "none"
-                    })
                     self.currentLocationCallBack(self.globalData.defaultLocationInfo);
                   }
                 }
               })        
             },
             fail:error => {
-              debugger
+              wx.showLoading({
+                title: error.errMsg,
+                icon: "none"
+              })
+              self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
               if (self.currentLocationCallBack) {
-                wx.showLoading({
-                  title: errMsg,
-                  icon: "none"
-                })
                 self.currentLocationCallBack(self.globalData.defaultLocationInfo);
               }
             }
@@ -109,6 +117,6 @@ App({
   globalData: {
     userInfo: null,
     isIpx: false,
-    defaultLocationInfo: defaultLocation.defaultLocation
+    defaultLocationInfo: null
   }
 })

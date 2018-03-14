@@ -9,8 +9,13 @@ Component({
       type:'parent',
       linked: function (target) { //插入到/navigation-bar中时被执行
         console.log(target)
+        this.setData({
+          titleContent: target.titleText
+        }) 
       },
-      linkChanged:function(target){  
+      linkChanged:function(target){
+        debugger
+         
       },
       unlinked:function(target){
       }
@@ -34,7 +39,7 @@ Component({
     titleContent:{
       type:String,
       value:'下拉选择按钮',
-      observer:'_changeTitleContent'
+      // observer:'_changeTitleContent'
     }
   },
 
@@ -50,7 +55,7 @@ Component({
    */
   methods: {
     // _changeTitleContent:function(newValue,oldValue){
-    //   debugger
+    //   // debugger
     //   this.setData({
     //     titleContent:newValue
     //   })

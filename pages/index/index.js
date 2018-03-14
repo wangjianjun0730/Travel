@@ -27,16 +27,26 @@ Page({
   },
 
   onLoad: function () {
-
     //获取当前定位信息(回调)
-    app.currentLocationCallBack = res => {
-      debugger
-      console.log(res);
+    if (app.globalData.defaultLocationInfo){
+      console.log(app.globalData.defaultLocationInfo)
       this.setData({
-        currentLocationInfo: res,
+        currentLocationInfo: app.globalData.defaultLocationInfo,
         hasCurrentLocation: true,
-        currentCityName: res.result.address_component.city
+        currentCityName: app.globalData.defaultLocationInfo.result.address_component.city
       })
+
+    }else{
+      app.currentLocationCallBack = res => {
+        console.log(res);
+        
+        this.setData({
+          currentLocationInfo: res,
+          hasCurrentLocation: true,
+          currentCityName: res.result.address_component
+.city
+        })
+      }
     }
 
     //获取用户信息
