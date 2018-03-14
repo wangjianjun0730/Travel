@@ -1,4 +1,6 @@
 //app.js
+var defaultLocation = require('./utils/homeLocationMock/homeLocationModk.js')
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -25,7 +27,10 @@ App({
     })
     // 获取用户信息
     wx.getSetting({
+
       success: res => {
+
+        // debugger
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -41,43 +46,69 @@ App({
             }
           })
         }
-
+        // debugger
+        //获取当前定位信息
         if (res.authSetting['scope.userLocation']){
-          /**
-           * 获取当前定位信息
-           */
+          // debugger
+          var self = this;
           wx.getLocation({
             type: 'gcj02',
-            success: function (res) {
+            success: res => {
               console.log(res)
-              debugger
-              if (!this.data.currentLocation) {
-                this.setData({
-                  currentLocation: {
-                    log: res.longitude,
-                    lat: res.latitude
+              //页面展示的时候调用
+              wx.request({
+                url: 'https://apis.map.qq.com/ws/geocoder/v1/',
+                data: {
+                  location: res.latitude + ',' + res.longitude,
+                  key: 'PQ3BZ-BXNLV-BTPPB-U4BCS-GZM5E-PEBUT'
+                },
+                success: res => {//逆编码请求成功
+                  console.log(res.data)
+                  if (self.currentLocationCallBack && res.status == 0){
+                    self.currentLocationCallBack(res);
+                  }else{
+                    wx.showLoading({
+                      title: res.message
+                    })
+                    self.currentLocationCallBack(self.globalData.defaultLocationInfo);
+                  } 
+                },
+                fail: error => {//逆编码请求失败
+                  debugger
+                  if (self.currentLocationCallBack) {
+                    wx.showLoading({
+                      title: error.errMsg,
+                      icon: "none"
+                    })
+                    self.currentLocationCallBack(self.globalData.defaultLocationInfo);
                   }
+                }
+              })        
+            },
+            fail:error => {
+              debugger
+              if (self.currentLocationCallBack) {
+                wx.showLoading({
+                  title: errMsg,
+                  icon: "none"
                 })
+                self.currentLocationCallBack(self.globalData.defaultLocationInfo);
               }
             }
           })
-        }else{
-          //用户没有授权，必须让其授权才能使用（再次调起定位授权）
-
         }
       }
     })
   },
+
   /**
    * userInfo:用户缓存信息
    * isIpx:是否为iPhoneX（导航栏适配）
-   * currentLocation:当前定位经纬度坐标
-   * currentSelectedCity:当前选择的城市（首次为定位城市,手动选择后为手动选择的城市
+   * defualtLocationInfo:默认定位经纬度坐标
   */
   globalData: {
     userInfo: null,
-    isIpx: false,           
-    currentLocation:null,
-    currentSelectedCityName:null
+    isIpx: false,
+    defaultLocationInfo: defaultLocation.defaultLocation
   }
 })

@@ -49,12 +49,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _changeTitleContent:function(newValue,oldValue){
-      debugger
-      this.setData({
-        titleContent:newValue
-      })
-    },
+    // _changeTitleContent:function(newValue,oldValue){
+    //   debugger
+    //   this.setData({
+    //     titleContent:newValue
+    //   })
+    // },
     buttonTap:function(){
       wx.showToast({
         title: '点击按钮，按钮内部触发',

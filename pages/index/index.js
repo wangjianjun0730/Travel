@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+
 const app = getApp()
 
 Page({
@@ -9,7 +10,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
-    
+    hasCurrentLocation:false,        //是否获取当前定位
+    currentCityName:""
   },
 
   onTap : function(e){
@@ -24,17 +26,18 @@ Page({
     })
   },
 
-  //事件处理函数
-  // bindViewTap: function() {
-  //   wx.navigateTo({
-  //     url: '../logs/logs'
-  //   })
-  // },
   onLoad: function () {
 
-    //获取当前定位信息
-    
-
+    //获取当前定位信息(回调)
+    app.currentLocationCallBack = res => {
+      debugger
+      console.log(res);
+      this.setData({
+        currentLocationInfo: res,
+        hasCurrentLocation: true,
+        currentCityName: res.result.address_component.city
+      })
+    }
 
     //获取用户信息
     if (app.globalData.userInfo) {
@@ -63,11 +66,6 @@ Page({
         }
       })
     }
-
-    
-
-
-
   },
   getUserInfo: function(e) {
     console.log(e)

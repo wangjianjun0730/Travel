@@ -11,15 +11,16 @@
   </view>
 
   <text 
-      wx:if="{{titleText.length!=0 && barType=='default'}}" 
+      wx:if="{{barType=='default'}}" 
       class='bar-title-text' 
       style="color:{{titleColor}}">{{titleText}}
   </text> 
   <arrow-button-down 
-      wx:if="{{titleText.length<=0 && barStyle=='arrow-button-down'}}"
+      wx:if="{{barStyle=='arrow-button-down'}}"
       class='title-button' 
       title-color="{{titleColor}}" 
       font-size="{{fontSize}}"
+      title-content="{{titleText}}"
   ></arrow-button-down>
 </view>
     

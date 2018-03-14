@@ -39,7 +39,7 @@ Component({
     barStyle: {
       type: String,
       value: 'default'
-    },
+    }
   },
 
   /**
