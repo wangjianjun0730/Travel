@@ -72,7 +72,7 @@ App({
                     }
                     
                   }else{
-                    wx.showLoading({
+                    wx.showshowToast({
                       title: res.data.message
                     })
                     self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
@@ -82,8 +82,11 @@ App({
                   } 
                 },
                 fail: error => {//逆编码请求失败
+                
+                console.log(defaultLocation.defaultLocation)
+                debugger
                   self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
-                  wx.showLoading({
+                  wx.showToast({
                     title: error.errMsg,
                     icon: "none"
                   })
