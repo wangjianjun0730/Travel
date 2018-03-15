@@ -82,9 +82,6 @@ App({
                   } 
                 },
                 fail: error => {//逆编码请求失败
-                
-                console.log(defaultLocation.defaultLocation)
-                debugger
                   self.globalData.defaultLocationInfo = defaultLocation.defaultLocation;
                   wx.showToast({
                     title: error.errMsg,

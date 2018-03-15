@@ -11,10 +11,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
     hasCurrentLocation:false,        //是否获取当前定位
-    currentCityName:""
   },
 
-  onTap : function(e){
+  myEventTap : function(e){
     wx.showToast({
       title: '132',
     })
@@ -29,17 +28,13 @@ Page({
   onLoad: function () {
     //获取当前定位信息(回调)
     if (app.globalData.defaultLocationInfo){
-      console.log(app.globalData.defaultLocationInfo)
       this.setData({
         currentLocationInfo: app.globalData.defaultLocationInfo,
         hasCurrentLocation: true,
         currentCityName: app.globalData.defaultLocationInfo.result.address_component.city
       })
-
     }else{
-      app.currentLocationCallBack = res => {
-        console.log(res);
-        
+      app.currentLocationCallBack = res => {        
         this.setData({
           currentLocationInfo: res,
           hasCurrentLocation: true,

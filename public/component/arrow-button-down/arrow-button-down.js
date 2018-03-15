@@ -8,21 +8,13 @@ Component({
     '../navigation-bar/navigation-bar':{
       type:'parent',
       linked: function (target) { //插入到/navigation-bar中时被执行
-        console.log(target)
-        this.setData({
-          titleContent: target.titleText
-        }) 
       },
       linkChanged:function(target){
-        debugger
-         
       },
       unlinked:function(target){
       }
     }
   },
-
-
 
   /**
    * 组件的属性列表
@@ -34,12 +26,11 @@ Component({
     },
     fontSize:{
       type:Number,
-      value:100
+      value:100,
     },
     titleContent:{
       type:String,
-      value:'下拉选择按钮',
-      // observer:'_changeTitleContent'
+      value:'',
     }
   },
 
@@ -47,19 +38,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-    
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    // _changeTitleContent:function(newValue,oldValue){
-    //   // debugger
-    //   this.setData({
-    //     titleContent:newValue
-    //   })
-    // },
     buttonTap:function(){
       wx.showToast({
         title: '点击按钮，按钮内部触发',

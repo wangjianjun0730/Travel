@@ -19,7 +19,7 @@
       wx:if="{{barStyle=='arrow-button-down'}}"
       class='title-button' 
       title-color="{{titleColor}}" 
-      font-size="{{fontSize}}"
+      font-size="{{titleFont}}"
       title-content="{{titleText}}"
   ></arrow-button-down>
 </view>

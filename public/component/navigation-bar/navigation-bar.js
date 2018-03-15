@@ -10,7 +10,7 @@ Component({
   '../arrow-button-down/arrow-button-down':{
     type:'child',
     linked: function (target){
-     
+     debugger
     },
     linkChanged: function (target){
     },
@@ -34,11 +34,17 @@ Component({
     titleText:{
       type:String,
       value:'',
+      observer:'_titleTextChanged'
     },
     /*导航栏样式:default(默认标题样式),arrow-button-down:下拉框样式),tink*/
     barStyle: {
       type: String,
       value: 'default'
+    },
+    titleFont:{
+      type:Number,
+      value:30,
+      observer: '_titleFontChanged'
     }
   },
 
@@ -47,8 +53,7 @@ Component({
    */
   data: {
     isIpx: app.globalData.isIpx, //适配iPhonex
-    leftItemHidden:false,
-    buttonTitle:'下拉按钮'  //自定义控件
+    leftItemHidden:false
   },
 
   /**
@@ -59,7 +64,7 @@ Component({
       wx.showToast({
         title: '返回',
       })
-    }
+    },
   },
 
   /**

@@ -1,9 +1,10 @@
 <!--index.wxml-->
-<navigation-bar 
+<navigation-bar bind:myEvent="myEventTap"
   left-item-hidden="{{true}}" 
   title-text="{{currentCityName}}"
   title-color="white"
   bar-style='arrow-button-down' 
+  title-font="{{34}}"
 ></navigation-bar>
 
 <!-- 地图 -->
