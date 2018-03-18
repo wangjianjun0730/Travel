@@ -14,8 +14,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
     currentSelectedCityInfo:null,
-    showMap:true,
-    showCityList:false,
+    showCityList:{},
+    hideCityList:{},
     controls:[
       { 
         id: 1,
@@ -28,9 +28,6 @@ Page({
         clickable:true,
         iconPath:"./img/move-to-location.png"
       }
-
-
-
     ]
   },
 
@@ -97,29 +94,30 @@ Page({
     //获取地图上下文并将地图显示到当前定位位置
     this.ctMap = wx.createMapContext("main-map");
     this.ctMap.moveToLocation();
+    // this.setData({
+    //   cityListShadeAnimation = wx.createAnimation({
+    //     delay:0,
+        
+    //   }),
+    //   cityListAnimation = wx.createAnimation({
+
+    //   })
+    // })
+    
+ 
     
   },
 
   _changeCity(){
-    this.setData({
-      showMap: !this.data.showMap,
-      showCityList: !this.data.showCityList
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
     })
 
-
-
-
-    // wx.showActionSheet({
-    //   itemList: ['A', 'B', 'C'],
-    //   success: function (res) {
-    //     console.log(res.tapIndex)
-    //   },
-    //   fail: function (res) {
-    //     console.log(res.errMsg)
-    //   }
-    // })
-
-
+    animation.scale(2, 2).rotate(45).step()
+    this.setData({
+      coverViewAnimation: animation
+    })
   },
 
   //地图controls事件点击
