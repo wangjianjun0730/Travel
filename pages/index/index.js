@@ -14,7 +14,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
     currentSelectedCityInfo:null,
-    showMap:false,
+    showMap:true,
     showCityList:false,
     controls:[
       { 
@@ -97,10 +97,29 @@ Page({
     //获取地图上下文并将地图显示到当前定位位置
     this.ctMap = wx.createMapContext("main-map");
     this.ctMap.moveToLocation();
+    
   },
 
   _changeCity(){
-   
+    this.setData({
+      showMap: !this.data.showMap,
+      showCityList: !this.data.showCityList
+    })
+
+
+
+
+    // wx.showActionSheet({
+    //   itemList: ['A', 'B', 'C'],
+    //   success: function (res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+
+
   },
 
   //地图controls事件点击
@@ -124,6 +143,5 @@ Page({
     if (this.ctMap){
       this.ctMap.moveToLocation();
     }
-    
   }
 })

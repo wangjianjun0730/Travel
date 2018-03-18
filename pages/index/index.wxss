@@ -3,6 +3,7 @@
   width: 100%;
   height: 128rpx;
   background-color: red;
+  position: fixed;
 }
 
 .container{
@@ -58,12 +59,11 @@
   height: 100%;
   padding: 0;
   position: absolute;
-  background-color: black;
-  opacity: 0.01;
+  background-color: dimgray;
 }
 
 .citylist-list{
   width: 100%;
   height: 50rpx;
-  background-color: gold
+  background-color: gold;
 }
