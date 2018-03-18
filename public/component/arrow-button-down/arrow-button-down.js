@@ -5,7 +5,7 @@ Component({
   组件嵌套（组件间关系）
   */
   relations:{
-    '../navigation-bar/navigation-bar':{
+    "../navigation-bar/navigation-bar":{
       type:'parent',
       linked: function (target) { //插入到/navigation-bar中时被执行
       },
@@ -31,6 +31,10 @@ Component({
     titleContent:{
       type:String,
       value:'',
+    },
+    bindCustomTap:{
+      type:Function,
+      value:function(){}
     }
   },
 
@@ -44,10 +48,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    buttonTap:function(){
-      wx.showToast({
-        title: '点击按钮，按钮内部触发',
-      })
+    btnTap:function(){
+      this.triggerEvent("myEvent",{})
     }
   }
 })

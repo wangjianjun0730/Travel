@@ -2,7 +2,6 @@
 let app = getApp();
 
 Component({
-
 /**
  * 关联向下箭头组件
 */
@@ -13,8 +12,10 @@ Component({
      debugger
     },
     linkChanged: function (target){
+      debugger
     },
     unlinked: function (target){
+      debugger
     }
   }
 },
@@ -33,8 +34,7 @@ Component({
     },
     titleText:{
       type:String,
-      value:'',
-      observer:'_titleTextChanged'
+      value:''
     },
     /*导航栏样式:default(默认标题样式),arrow-button-down:下拉框样式),tink*/
     barStyle: {
@@ -43,8 +43,11 @@ Component({
     },
     titleFont:{
       type:Number,
-      value:30,
-      observer: '_titleFontChanged'
+      value:30
+    },
+    bindTitleTap:{
+      type:Function,
+      value: function(){}
     }
   },
 
@@ -60,37 +63,28 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //左侧返回按钮
     leftBack:function(){
       wx.showToast({
         title: '返回',
       })
     },
+    naviTitleTap:function(){
+      this.triggerEvent("myEventTap",{})
+    }
+
+    
   },
 
   /**
-   * 生命周期函数
+   * 生命周期函数(不能使用setData)
    */
-  //不能使用setData
   created: function(){
 
   },
 
   ready:function(){
-    //获取定位坐标
-    wx.getLocation({
-      type:"wgs84",
-      success: function(res) {
-        
 
-      },
-      fail:function(error){
-
-      }
-    })    
-
-    this.setData({
-
-    })
   }
 
 

@@ -38,8 +38,32 @@
 .usermotto {
   /* margin-top: 200px; */
 }
-.app-map{
+#main-map{
   position: absolute;
   width: 100%;
   height: 100%;
+}
+.map_content{
+  top: 20rpx;
+  left: 20rpx;
+  height: 50rpx;
+  width: 50rpx;
+  background-color: red;
+  text-align: center;
+  position: absolute
+}
+/* 下拉城市列表容器 */
+.citylist-container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  background-color: black;
+  opacity: 0.01;
+}
+
+.citylist-list{
+  width: 100%;
+  height: 50rpx;
+  background-color: gold
 }

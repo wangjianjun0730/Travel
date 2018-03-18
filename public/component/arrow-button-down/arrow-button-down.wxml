@@ -1,6 +1,6 @@
 
 <view class='button-container'>
-  <view class='arrow-button-unique'>
+  <view class='arrow-button-unique' bindtap='btnTap'>
     <view style='color:{{titleColor}};font-size:{{fontSize}}rpx'>{{titleContent}}</view>
     <image class='arrow-button-arrow-imag' src="{{titleColor=='white'?'./img/arrow-down-white.png':'./img/arrow-down.png'}}"></image>
   </view> 

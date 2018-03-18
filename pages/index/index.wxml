@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<navigation-bar bind:myEvent="myEventTap"
+<navigation-bar bind:myEventTap="_changeCity"
   left-item-hidden="{{true}}" 
   title-text="{{currentCityName}}"
   title-color="white"
@@ -10,10 +10,14 @@
 <!-- 地图 -->
 <view class="container">
   <map 
-    class='app-map'
-    
-
-  ></map>
-  
+    id='main-map' 
+    show-location='{{true}}' 
+    controls='{{controls}}'
+    bindcontroltap='_controlTaps'
+    wx:if='{{showMap}}'
+    ></map>
+  <view class='citylist-container' wx:if="{{!showMap}}">
+    <view wx:key="{{idx}}" wx:for="{{['A','B','C']}}" wx:for-index="idx" class='citylist-list'>{{item}}</view>
+  </view>
 
 </view>

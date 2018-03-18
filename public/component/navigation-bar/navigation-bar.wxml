@@ -21,6 +21,7 @@
       title-color="{{titleColor}}" 
       font-size="{{titleFont}}"
       title-content="{{titleText}}"
+      bind:myEvent="naviTitleTap"
   ></arrow-button-down>
 </view>
     

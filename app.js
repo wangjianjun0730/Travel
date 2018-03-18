@@ -11,6 +11,12 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    //获取手机屏幕尺寸
+   var systemInfo = wx.getSystemInfoSync();
+   this.globalData.windowWidth = systemInfo.windowWidth;
+   this.globalData.windowHeight = systemInfo.windowHeight;
+
+
     //获取机型（iPhone X）进行导航栏适配
     var self = this;
     wx.getSystemInfo({
