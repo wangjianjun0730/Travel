@@ -14,8 +14,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     id:"1",
     currentSelectedCityInfo:null,
-    showCityList:{},
-    hideCityList:{},
+    showCityList:false,
     controls:[
       { 
         id: 1,
@@ -109,15 +108,29 @@ Page({
   },
 
   _changeCity(){
-    var animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: 'ease',
-    })
 
-    animation.scale(2, 2).rotate(45).step()
+    // wx.showActionSheet({
+    //   itemList: ['A', 'B', 'C'],
+    //   success: function (res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+
     this.setData({
-      coverViewAnimation: animation
+        showCityList: !this.data.showCityList
     })
+    // var animation = wx.createAnimation({
+    //   duration: 1000,
+    //   timingFunction: 'ease',
+    // })
+
+    // animation.scale(2, 2).rotate(45).step()
+    // this.setData({
+    //   coverViewAnimation: animation
+    // })
   },
 
   //地图controls事件点击
