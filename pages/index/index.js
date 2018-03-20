@@ -31,6 +31,9 @@ Page({
   },
 
   onLoad: function () {
+    
+    this._getCityList();
+
     //****** 获取当前定位信息(回调) ******//
     if (app.globalData.defaultLocationInfo){
       this.setData({
@@ -89,48 +92,17 @@ Page({
     })
   },
 
-  onReady(){
+  onReady:function(){
+    // debugger
     //获取地图上下文并将地图显示到当前定位位置
     this.ctMap = wx.createMapContext("main-map");
     this.ctMap.moveToLocation();
-    // this.setData({
-    //   cityListShadeAnimation = wx.createAnimation({
-    //     delay:0,
-        
-    //   }),
-    //   cityListAnimation = wx.createAnimation({
-
-    //   })
-    // })
-    
- 
-    
   },
 
   _changeCity(){
-
-    // wx.showActionSheet({
-    //   itemList: ['A', 'B', 'C'],
-    //   success: function (res) {
-    //     console.log(res.tapIndex)
-    //   },
-    //   fail: function (res) {
-    //     console.log(res.errMsg)
-    //   }
-    // })
-
     this.setData({
         showCityList: !this.data.showCityList
     })
-    // var animation = wx.createAnimation({
-    //   duration: 1000,
-    //   timingFunction: 'ease',
-    // })
-
-    // animation.scale(2, 2).rotate(45).step()
-    // this.setData({
-    //   coverViewAnimation: animation
-    // })
   },
 
   //地图controls事件点击
@@ -154,5 +126,16 @@ Page({
     if (this.ctMap){
       this.ctMap.moveToLocation();
     }
+  },
+
+  _getCityList:function(){
+    
+    var arr = [];
+    for (var i = 0; i < cityList["cityList"].length; i++) {
+      arr.push(cityList["cityList"][i].cityName);
+    }
+    this.setData({
+      cityListArr: arr
+    })
   }
 })
