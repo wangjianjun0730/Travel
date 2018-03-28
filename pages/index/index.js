@@ -100,6 +100,7 @@ Page({
   },
 
   _changeCity(){
+    console.log(this.data.showCityList);
     this.setData({
         showCityList: !this.data.showCityList
     })

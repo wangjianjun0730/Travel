@@ -10,6 +10,6 @@
 <!-- 地图 -->
 <view class="container">
   <map id='main-map' show-location='{{true}}' controls='{{controls}}' bindcontroltap='_controlTaps'>
-      <pull-down-list wx:if="{{showCityList}}" listArr="{{cityListArr}}"></pull-down-list>
+      <pull-down-list isShow="{{showCityList}}" listArr="{{cityListArr}}"></pull-down-list>
   </map>
 </view>

@@ -1,6 +1,6 @@
-<canvas class='container' canvas-id='background-canvas'>
-  <cover-view class='shade-container'>
-    <cover-view class='list-container'> 
+<canvas class='background-container' canvas-id='background-canvas'>
+  <cover-view class="'shade-container' {{isShow?'showShadeAnimaiton':'hideShadeAnimaiton'}}">
+    <cover-view class="'list-container' {{isShow?'showListAnimaiton':'hideListAnimaiton'}}"> 
       <cover-view 
         listArr="{{listArr}}" 
         wx:key="{{index}}" 
