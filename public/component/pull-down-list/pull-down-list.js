@@ -28,11 +28,24 @@ Component({
    */
   methods: {
     _showList:function(newValue,oldValue){
-      console.log("======"+newValue)
-      this.setData({
-        show: newValue
-      })
-    }
+      if (newValue) {
+        this.setData({
+          show: newValue,
+          isRemove: false
+        })
+      } else {
+        this.setData({
+          show: newValue,
+        })
+        //.5s后移除
+        var self = this;
+        setTimeout(function(){
+          self.setData({
+            isRemove: true
+          })
+        },600)
+      }
+    },
   },
 
   ready:function(){
